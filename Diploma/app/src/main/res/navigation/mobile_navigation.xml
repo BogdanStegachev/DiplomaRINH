@@ -3,41 +3,30 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_home">
+    app:startDestination="@+id/nav_test">
 
     <fragment
-        android:id="@+id/nav_home"
+        android:id="@+id/nav_test"
         android:name="com.example.diploma.activity.ui.tests.TestsFragment"
-        android:label="@string/menu_home"
+        android:label="@string/menu_tests"
         tools:layout="@layout/fragment_tests" />
 
     <fragment
-        android:id="@+id/nav_gallery"
+        android:id="@+id/nav_results"
         android:name="com.example.diploma.activity.ui.createtests.CreacteTestsFragment"
-        android:label="@string/menu_gallery"
+        android:label="@string/menu_results"
         tools:layout="@layout/fragment_results" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
+        android:id="@+id/nav_create"
         android:name="com.example.diploma.activity.ui.results.ResultsFragment"
-        android:label="@string/menu_slideshow"
+        android:label="@string/menu_create"
         tools:layout="@layout/fragment_create" />
 
     <fragment
-        android:id="@+id/nav_tools"
+        android:id="@+id/nav_about"
         android:name="com.example.diploma.activity.ui.aboutproject.AboutProjectFragment"
-        android:label="@string/menu_tools"
+        android:label="@string/menu_about"
         tools:layout="@layout/fragment_about" />
 
-    <fragment
-        android:id="@+id/nav_share"
-        android:name="com.example.diploma.activity.ui.share.ShareFragment"
-        android:label="@string/menu_share"
-        tools:layout="@layout/fragment_share" />
-
-    <fragment
-        android:id="@+id/nav_send"
-        android:name="com.example.diploma.activity.ui.send.SendFragment"
-        android:label="@string/menu_send"
-        tools:layout="@layout/fragment_send" />
 </navigation>
