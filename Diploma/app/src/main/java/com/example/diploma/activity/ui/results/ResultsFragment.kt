@@ -1,4 +1,4 @@
-package com.example.diploma.activity.ui.home
+package com.example.diploma.activity.ui.results
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,22 +8,23 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
-import com.example.diploma.activity.R
+import com.example.diploma.R
 
-class HomeFragment : Fragment() {
 
-    private lateinit var homeViewModel: HomeViewModel
+class ResultsFragment : Fragment() {
+
+    private lateinit var resultsViewModel: ResultsViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        homeViewModel =
-            ViewModelProviders.of(this).get(HomeViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_home, container, false)
-        val textView: TextView = root.findViewById(R.id.text_home)
-        homeViewModel.text.observe(this, Observer {
+        resultsViewModel =
+            ViewModelProviders.of(this).get(ResultsViewModel::class.java)
+        val root = inflater.inflate(R.layout.fragment_create, container, false)
+        val textView: TextView = root.findViewById(R.id.text_slideshow)
+        resultsViewModel.text.observe(this, Observer {
             textView.text = it
         })
         return root

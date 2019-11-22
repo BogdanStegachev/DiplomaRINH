@@ -1,13 +1,13 @@
-package com.example.diploma.activity.ui.home
+package com.example.diploma.activity.ui.aboutproject
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class HomeViewModel : ViewModel() {
+class ToolsViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
-        value = "This is home Fragment"
+        value = "This is tools Fragment"
     }
     val text: LiveData<String> = _text
 }

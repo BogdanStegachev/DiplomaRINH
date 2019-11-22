@@ -1,4 +1,4 @@
-package com.example.diploma.activity.ui.share
+package com.example.diploma.activity.ui.aboutproject
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,22 +8,23 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
-import com.example.diploma.activity.R
+import com.example.diploma.R
 
-class ShareFragment : Fragment() {
 
-    private lateinit var shareViewModel: ShareViewModel
+class ToolsFragment : Fragment() {
+
+    private lateinit var toolsViewModel: ToolsViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        shareViewModel =
-            ViewModelProviders.of(this).get(ShareViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_share, container, false)
-        val textView: TextView = root.findViewById(R.id.text_share)
-        shareViewModel.text.observe(this, Observer {
+        toolsViewModel =
+            ViewModelProviders.of(this).get(ToolsViewModel::class.java)
+        val root = inflater.inflate(R.layout.fragment_tools, container, false)
+        val textView: TextView = root.findViewById(R.id.text_tools)
+        toolsViewModel.text.observe(this, Observer {
             textView.text = it
         })
         return root

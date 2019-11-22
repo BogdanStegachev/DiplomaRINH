@@ -1,4 +1,4 @@
-package com.example.diploma.activity.ui.gallery
+package com.example.diploma.activity.ui.createtests
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,22 +8,23 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
-import com.example.diploma.activity.R
+import com.example.diploma.R
 
-class GalleryFragment : Fragment() {
 
-    private lateinit var galleryViewModel: GalleryViewModel
+class CreacteTestsFragment : Fragment() {
+
+    private lateinit var createTestsViewModel: CreateTestsViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        galleryViewModel =
-            ViewModelProviders.of(this).get(GalleryViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_gallery, container, false)
+        createTestsViewModel =
+            ViewModelProviders.of(this).get(CreateTestsViewModel::class.java)
+        val root = inflater.inflate(R.layout.fragment_results, container, false)
         val textView: TextView = root.findViewById(R.id.text_gallery)
-        galleryViewModel.text.observe(this, Observer {
+        createTestsViewModel.text.observe(this, Observer {
             textView.text = it
         })
         return root
