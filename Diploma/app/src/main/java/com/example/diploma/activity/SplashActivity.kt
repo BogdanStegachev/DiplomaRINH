@@ -31,18 +31,6 @@ class SplashActivity : AppCompatActivity() {
 
     }
 
-    //    private fun initFunc()
-//    {
-//        layout.postDelayed(Runnable {
-//            override fun run(){
-//                progressBar.visibility = View.GONE
-//                imageView.startAnimation(animation)
-//                animation.setAnimationListener(Animation.AnimationListener(an){
-//
-//                })
-//            }
-//        })
-//    }
     private fun initFunctionality() {
         layout.postDelayed(Runnable {
             progressBar.visibility = View.GONE
@@ -53,12 +41,7 @@ class SplashActivity : AppCompatActivity() {
                 }
 
                 override fun onAnimationEnd(animation: Animation) {
-//                    val activityUtilities : ActivityUtilities? = null
-////                    activityUtilities!!.getInstance().invokeNewActivity(
-////                        this@SplashActivity,
-////                        MainActivity::class.java, true
-////                    )
-                   nextActivity(this@SplashActivity)
+                    nextActivity(this@SplashActivity)
                 }
 
                 override fun onAnimationRepeat(animation: Animation) {
@@ -73,7 +56,7 @@ class SplashActivity : AppCompatActivity() {
         initFunctionality()
     }
 
-     fun nextActivity(activity: Activity){
+    fun nextActivity(activity: Activity) {
         val intent = Intent(activity, MainActivity::class.java)
         activity.startActivity(intent)
     }

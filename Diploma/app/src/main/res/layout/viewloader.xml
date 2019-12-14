@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="196dp"
+            android:layout_height="215dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="5dp"
+            android:orientation="vertical"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="10dp">
+
+                <TextView
+                    android:id="@+id/nameLesson"
+                    android:layout_width="105dp"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10dp"
+                    android:text="Тест"
+                    android:textSize="42sp" />
+        </LinearLayout>
+</LinearLayout>
