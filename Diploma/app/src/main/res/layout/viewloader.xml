@@ -13,7 +13,7 @@
             android:paddingVertical="10dp">
 
                 <TextView
-                    android:id="@+id/nameLesson"
+                    android:id="@+id/Test"
                     android:layout_width="105dp"
                     android:layout_height="wrap_content"
                     android:paddingTop="10dp"

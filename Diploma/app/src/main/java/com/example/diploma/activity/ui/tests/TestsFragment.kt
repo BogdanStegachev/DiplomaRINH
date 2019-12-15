@@ -8,26 +8,33 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.diploma.R
 import com.example.diploma.activity.Test
+import com.example.diploma.activity.adapters.TestAdapter
 
 
 class TestsFragment : Fragment() {
 
-    private lateinit var testsViewModel: TestsViewModel
+    var adapter = TestAdapter()
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        testsViewModel =
-            ViewModelProviders.of(this).get(TestsViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_tests, container, false)
-        val textView: TextView = root.findViewById(R.id.recyclerView)
-        testsViewModel.text.observe(this, Observer {
-            textView.text = it
-        })
+
+        var rv : RecyclerView = root.findViewById(R.id.recyclerView)
+        rv.layoutManager = LinearLayoutManager(activity)
+        rv.adapter = adapter
+        var testData = Test("Test")
+        var testData2 = Test("Test2")
+        var list = ArrayList<Test>()
+        list.add(testData)
+        list.add(testData2)
+        adapter.setTest(list)
         return root
     }
 
