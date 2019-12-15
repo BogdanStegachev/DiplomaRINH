@@ -31,6 +31,7 @@ class TestsFragment : Fragment() {
         rv.adapter = adapter
         var testData = Test("Test")
         var testData2 = Test("Test2")
+        var testData3 = Test("Test3")
         var list = ArrayList<Test>()
         list.add(testData)
         list.add(testData2)
