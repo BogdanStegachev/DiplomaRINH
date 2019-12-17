@@ -14,6 +14,7 @@
 
                 <TextView
                     android:id="@+id/Test"
+                    android:textColor="@color/blue"
                     android:layout_width="113dp"
                     android:layout_height="wrap_content"
                     android:paddingTop="10dp"
