@@ -2,7 +2,7 @@ package com.example.diploma.utilities
 
 import android.app.Activity
 import android.content.Intent
-import com.example.diploma.activity.MainActivity
+import com.example.diploma.core.activity.MainActivity
 
 
 class ActivityUtilities {
