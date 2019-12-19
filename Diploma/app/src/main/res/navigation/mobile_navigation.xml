@@ -28,5 +28,10 @@
         android:name="com.example.diploma.core.ui.aboutproject.AboutProjectFragment"
         android:label="@string/menu_about"
         tools:layout="@layout/fragment_about" />
+    <fragment
+        android:id="@+id/postTestsFragment"
+        android:name="com.example.diploma.fragment.PostTestsFragment"
+        android:label="fragment_post_tests"
+        tools:layout="@layout/fragment_post_tests" />
 
 </navigation>

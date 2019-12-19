@@ -1,11 +1,13 @@
 package com.example.diploma.core.ui.tests
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.diploma.R
@@ -38,6 +40,7 @@ class TestsFragment : Fragment() {
         rv.addOnItemClickListener(object : OnItemClickListener {
             override fun onItemClicked(position: Int, view: View) {
                 Toast.makeText(activity, "nice", Toast.LENGTH_SHORT).show()
+                view!!.findNavController().navigate(R.id.postTestsFragment)
             }
         })
         adapter.setTest(list)
