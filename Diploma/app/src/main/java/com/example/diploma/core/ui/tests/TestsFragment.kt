@@ -40,7 +40,7 @@ class TestsFragment : Fragment() {
         rv.addOnItemClickListener(object : OnItemClickListener {
             override fun onItemClicked(position: Int, view: View) {
                 Toast.makeText(activity, "nice", Toast.LENGTH_SHORT).show()
-                view!!.findNavController().navigate(R.id.postTestsFragment)
+                view.findNavController().navigate(R.id.postTestsFragment)
             }
         })
         adapter.setTest(list)

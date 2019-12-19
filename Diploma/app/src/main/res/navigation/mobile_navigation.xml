@@ -9,11 +9,15 @@
         android:id="@+id/nav_test"
         android:name="com.example.diploma.core.ui.tests.TestsFragment"
         android:label="@string/menu_tests"
-        tools:layout="@layout/fragment_tests" />
+        tools:layout="@layout/fragment_tests" >
+        <action
+            android:id="@+id/action_nav_test_to_postTestsFragment"
+            app:destination="@id/postTestsFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/nav_results"
-        android:name="com.example.diploma.core.ui.createtests.CreacteTestsFragment"
+        android:name="com.example.diploma.core.ui.createtests.CreateTestsFragment"
         android:label="@string/menu_results"
         tools:layout="@layout/fragment_results" />
 
