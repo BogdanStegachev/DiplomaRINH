@@ -1,5 +1,7 @@
 package com.example.diploma.activity
 
+import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.view.animation.Animation
@@ -8,6 +10,7 @@ import android.widget.ImageView
 import android.widget.ProgressBar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
+import com.example.diploma.utilities.ActivityUtilities
 
 
 class SplashActivity : AppCompatActivity() {
@@ -28,18 +31,6 @@ class SplashActivity : AppCompatActivity() {
 
     }
 
-    //    private fun initFunc()
-//    {
-//        layout.postDelayed(Runnable {
-//            override fun run(){
-//                progressBar.visibility = View.GONE
-//                imageView.startAnimation(animation)
-//                animation.setAnimationListener(Animation.AnimationListener(an){
-//
-//                })
-//            }
-//        })
-//    }
     private fun initFunctionality() {
         layout.postDelayed(Runnable {
             progressBar.visibility = View.GONE
@@ -50,9 +41,7 @@ class SplashActivity : AppCompatActivity() {
                 }
 
                 override fun onAnimationEnd(animation: Animation) {
-//                ActivityUtilities.getInstance()
-//                    .invokeNewActivity(this@SplashActivity, MainActivity::class.java, true)
-
+                    nextActivity(this@SplashActivity)
                 }
 
                 override fun onAnimationRepeat(animation: Animation) {
@@ -65,5 +54,10 @@ class SplashActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
         initFunctionality()
+    }
+
+    fun nextActivity(activity: Activity) {
+        val intent = Intent(activity, MainActivity::class.java)
+        activity.startActivity(intent)
     }
 }
