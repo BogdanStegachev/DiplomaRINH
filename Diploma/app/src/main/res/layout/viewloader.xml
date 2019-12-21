@@ -23,7 +23,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center_vertical|center_horizontal|top"
-        android:text="Карточка на кота Василия"
+        android:text="Тест "
         android:textSize="36sp" />
 
     </androidx.cardview.widget.CardView>

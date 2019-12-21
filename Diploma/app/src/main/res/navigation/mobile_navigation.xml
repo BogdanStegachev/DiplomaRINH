@@ -35,7 +35,7 @@
     <fragment
         android:id="@+id/postTestsFragment"
         android:name="com.example.diploma.fragment.PostTestsFragment"
-        android:label="fragment_post_tests"
+        android:label="@string/menu_postTest"
         tools:layout="@layout/fragment_post_tests" />
 
 </navigation>
