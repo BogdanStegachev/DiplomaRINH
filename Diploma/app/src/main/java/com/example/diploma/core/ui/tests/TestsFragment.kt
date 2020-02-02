@@ -1,5 +1,6 @@
 package com.example.diploma.core.ui.tests
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -13,6 +14,7 @@ import com.example.diploma.R
 import com.example.diploma.core.classes.Test
 import com.example.diploma.core.adapters.TestAdapter
 import com.example.diploma.core.classes.OnItemClickListener
+import java.io.File
 
 
 class TestsFragment : Fragment() {
@@ -27,6 +29,7 @@ class TestsFragment : Fragment() {
         val root = inflater.inflate(R.layout.fragment_tests, container, false)
 
         var rv: RecyclerView = root.findViewById(R.id.recyclerView)
+        var internalStorageDir : File = context!!.filesDir
         rv.layoutManager = LinearLayoutManager(activity)
         rv.adapter = adapter
         var testData = Test("Test")
@@ -40,6 +43,7 @@ class TestsFragment : Fragment() {
             override fun onItemClicked(position: Int, view: View) {
                 Toast.makeText(activity, "nice", Toast.LENGTH_SHORT).show()
                 view.findNavController().navigate(R.id.postTestsFragment)
+
             }
         })
         adapter.setTest(list)
