@@ -2,15 +2,15 @@
 <resources>
     <color name="colorPrimary">#0E1060</color>
     <color name="colorPrimaryDark">#0E1060</color>
-    <color name="colorAccent">#D81B60</color>
+    <color name="colorAccent">#BD1111</color>
     <!--Common colors-->
     <color name="bg_splash">#FFFFFF</color>
     <color name="page_bg">#F7F5F6</color>
     <color name="page_bg_dim">#FAFAFA</color>
     <color name="white">#FFFFFF</color>
-    <color name="black">#000000</color>
+    <color name="black">#FFFFFF</color>
     <color name="red">#EF5350</color>
-    <color name="transparent_black">#99000000</color>
+    <color name="transparent_black">#FFFFFF</color>
     <color name="transparent_white">#AAFFFFFF</color>
     <color name="yellow">#d0d001</color>
     <color name="green">#00BF9A</color>
@@ -28,9 +28,9 @@
     <color name="default_background">#EEEEEE</color>
 
 
-    <color name="trans">#80000000</color>
-    <color name="tran">#50000000</color>
-    <color name="detailsToolbar">#55000000</color>
+    <color name="trans">#FFFFFF</color>
+    <color name="tran">#FFFFFF</color>
+    <color name="detailsToolbar">#FFFFFF</color>
 
     <color name="notification_card_bg">#EFEFEF</color>
 
@@ -42,6 +42,6 @@
     <color name="colorArrowActive">#2CA1FF</color>
     <color name="colorTitle">#393b7c</color>
     <color name="colorTextGrey">#212121</color>
-    <color name="colorBlack">#000000</color>
+    <color name="colorBlack">#FFFFFF</color>
     <color name="colorSmallText">#5e5e5e</color>
 </resources>
