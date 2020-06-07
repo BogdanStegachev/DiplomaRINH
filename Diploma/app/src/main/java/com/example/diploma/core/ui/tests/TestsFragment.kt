@@ -1,6 +1,7 @@
 package com.example.diploma.core.ui.tests
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -11,9 +12,12 @@ import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.diploma.R
+import com.example.diploma.core.activity.Main2Activity
+import com.example.diploma.core.activity.MainActivity
 import com.example.diploma.core.classes.Test
 import com.example.diploma.core.adapters.TestAdapter
 import com.example.diploma.core.classes.OnItemClickListener
+import kotlinx.android.synthetic.main.app_bar_main.*
 import java.io.File
 
 
