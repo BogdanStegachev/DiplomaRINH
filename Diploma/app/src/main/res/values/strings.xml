@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Diploma</string>
+    <string name="app_name">РИНХ. Тестирование</string>
     <string name="app_description">Значение</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
@@ -8,6 +8,7 @@
     <string name="nav_header_subtitle">Находится в разработке</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
+    <string name="quiz_prompt">Тестирование</string>
 
     <string name="menu_tests">Выбор теста</string>
     <string name="menu_results">Результаты тестов</string>
@@ -15,6 +16,7 @@
     <string name="menu_about">О приложении</string>
     <string name="menu_postTest">Тест</string>
 
+    <string name="quiz_question_title">Вопрос %d из %d</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

@@ -16,15 +16,15 @@
     </fragment>
 
     <fragment
-        android:id="@+id/nav_results"
+        android:id="@+id/nav_create"
         android:name="com.example.diploma.core.ui.createtests.CreateTestsFragment"
-        android:label="@string/menu_results"
+        android:label="@string/menu_create"
         tools:layout="@layout/fragment_results" />
 
     <fragment
-        android:id="@+id/nav_create"
+        android:id="@+id/nav_results"
         android:name="com.example.diploma.core.ui.results.ResultsFragment"
-        android:label="@string/menu_create"
+        android:label="@string/menu_results"
         tools:layout="@layout/fragment_create" />
 
     <fragment

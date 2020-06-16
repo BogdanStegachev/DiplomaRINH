@@ -6,10 +6,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import com.example.diploma.R
-import com.example.diploma.core.retrofitClasses.ApiWeather
-import com.example.diploma.core.retrofitClasses.Post
+import com.example.diploma.core.retrofitClasses.ApiRSUE
+import com.example.diploma.core.retrofitClasses.Question
 import kotlinx.android.synthetic.main.post_tests_fragment.*
 import retrofit2.*
 import retrofit2.converter.gson.GsonConverterFactory
@@ -29,33 +28,34 @@ class PostTestsFragment : Fragment() {
 
     fun retrofit(){
         val retrofit = Retrofit.Builder()
-            .baseUrl("https://jsonplaceholder.typicode.com/")
+            .baseUrl("http://193.7.217.242:7000/api/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
-        val jsonPlaceHolderApi: ApiWeather = retrofit.create(ApiWeather::class.java)
-        val call = jsonPlaceHolderApi.getPosts()
-        call.enqueue(object : Callback<ArrayList<Post>> {
+        val jsonPlaceHolderApi: ApiRSUE = retrofit.create(ApiRSUE::class.java)
+        val call = jsonPlaceHolderApi.getQuestion()
+        call.enqueue(object : Callback<ArrayList<Question>> {
             @SuppressLint("SetTextI18n")
             override fun onResponse(
-                call: Call<ArrayList<Post>>,
-                response: Response<ArrayList<Post>>
+                call: Call<ArrayList<Question>>,
+                response: Response<ArrayList<Question>>
             ) {
                 if (!response.isSuccessful) {
                     textViewPost.text = "Code: " + response.code()
                     return
                 }
-                val posts: ArrayList<Post>? = response.body()
-                for (post in posts!!) {
+                val questions: ArrayList<Question>? = response.body()
+                for (question in questions!!) {
                     var content = ""
-                    content += "ID: " + post.userId + "\n"
-                    content += "User ID: " + post.id + "\n"
-                    content += "Title: " + post.title + "\n"
-                    content += "Text: " + post.body + "\n\n"
+                    content += "ID: " + question.id + "\n"
+                    content += "Question: " + question.question + "\n"
+                    content += "Answer: " + question.answersList + "\n"
+                    content += "CorrectAnswer " + question.correctAnswer + "\n\n"
+                    content += "Category" + question.questionCategory + "\n\n"
                     textViewPost.append(content)
                 }
             }
 
-            override fun onFailure(call: Call<ArrayList<Post>>, t: Throwable) {
+            override fun onFailure(call: Call<ArrayList<Question>>, t: Throwable) {
                 textViewPost.text = t.message
             }
         })

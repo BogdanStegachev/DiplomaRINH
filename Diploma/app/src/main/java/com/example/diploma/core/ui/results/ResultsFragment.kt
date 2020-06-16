@@ -9,11 +9,6 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.example.diploma.R
-import com.example.diploma.core.retrofitClasses.ApiWeather
-import kotlinx.android.synthetic.main.post_tests_fragment.*
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
 
 
 class ResultsFragment : Fragment() {
