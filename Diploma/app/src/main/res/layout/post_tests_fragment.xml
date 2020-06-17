@@ -5,16 +5,9 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <include
-        android:id="@+id/toolbarTop"
-        layout="@layout/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/toolbarTop"
         android:paddingBottom="15dp"
         android:paddingEnd="15dp"
         android:paddingStart="15dp"

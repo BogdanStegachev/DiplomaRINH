@@ -1,5 +1,6 @@
 package com.example.diploma.core.ui.tests
 
+import android.app.AlertDialog
 import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -43,7 +44,24 @@ class TestsFragment : Fragment() {
         rv.addOnItemClickListener(object : OnItemClickListener {
             override fun onItemClicked(position: Int, view: View) {
                 Toast.makeText(activity, "nice", Toast.LENGTH_SHORT).show()
-                view.findNavController().navigate(R.id.postTestsFragment)
+                val dialog = AlertDialog.Builder(context)
+                    .setTitle("Вы уверены, что хотите пройти тест?")
+                    .setPositiveButton(
+                        android.R.string.yes
+                    ) { _, _ ->
+                        view.findNavController().navigate(R.id.postTestsFragment)
+                    }
+                    .setNegativeButton(android.R.string.no, null)
+                    .setIcon(android.R.drawable.ic_dialog_info)
+                    .create()
+                dialog.setOnShowListener {
+                    dialog.getButton(AlertDialog.BUTTON_NEGATIVE)
+                        .setTextColor(requireContext().resources.getColor(R.color.colorPrimary))
+                    dialog.getButton(AlertDialog.BUTTON_POSITIVE)
+                        .setTextColor(requireContext().resources.getColor(R.color.colorPrimary))
+                    dialog.getButton(AlertDialog.BUTTON_POSITIVE).text = "Пройти"
+                }
+                dialog.show()
 
             }
         })

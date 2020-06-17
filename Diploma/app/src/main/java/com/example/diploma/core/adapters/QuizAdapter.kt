@@ -7,73 +7,31 @@ import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.diploma.R
-import com.example.diploma.core.classes.OnItemClickListener
-import com.example.diploma.core.retrofitClasses.Question
+import com.example.diploma.core.classes.AnswersLogger
 
 class QuizAdapter : RecyclerView.Adapter<QuizAdapter.ViewHolder>() {
 
 
-    private var QuestionList = ArrayList<Question>()
+    private var answList = ArrayList<String>()
 
-    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView), View.OnClickListener {
+    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         private var cardView : CardView = itemView.findViewById(R.id.card_view)
-        private var itemQuiz: TextView = itemView.findViewById(R.id.answer_text)
-        private  var itemClickListener : OnItemClickListener? = null
+        var itemQuiz: TextView = itemView.findViewById(R.id.answer_text)
 
-        init {
-
-           cardView.setOnClickListener(this)
-        }
-
-       override fun onClick(view : View) {
-
-        }
-
-        fun bind(subject: Subject, isTeacher: Boolean) {
-            time.text = subject.startTime + " - " + subject.endTime
-            name.text = subject.title
-            if (isTeacher)
-                teacher.text = subject.group.name
-            else
-                teacher.text = subject.teacher.position + " " + subject.teacher.name
-            room.text = subject.classroom.number + " " + subject.classroom.corps
-            type.text = subject.typeOfWork
-            this.address = subject.classroom.address
+        fun bind(ans: String) {
+            itemQuiz.text = ans
         }
 
     }
 
-
-    fun setItems(subjects: ArrayList<Subject>) {
+    fun setItems(answers: ArrayList<String>) {
         clearItems()
-        if (subjects.size != 0)
-            SubjectList.addAll(subjects)
-        else {
-            val emptyTitle:String = if(isTeacher)
-                "В этот день у преподавателя нет занятий"
-            else
-                "В этот день у группы нет занятий"
-
-            val lesson = Subject(
-                0,
-                emptyTitle,
-                "",
-                "",
-                Classroom("", "", ""),
-                Teacher(-1, "", ""),
-                Group(-1, -1, ""),
-                0,
-                ""
-            )
-            val subj = ArrayList<Subject>()
-            subj.add(lesson)
-            SubjectList.addAll(subj)
-        }
+        answList = answers
         notifyDataSetChanged()
     }
 
     fun clearItems() {
-        SubjectList.clear()
+        answList.clear()
         notifyDataSetChanged()
     }
 
@@ -81,14 +39,15 @@ class QuizAdapter : RecyclerView.Adapter<QuizAdapter.ViewHolder>() {
         val view =
             LayoutInflater.from(parent.context)
                 .inflate(R.layout.item_quiz, parent, false)
+
         return ViewHolder(view)
     }
 
     override fun getItemCount(): Int {
-        return SubjectList.size
+        return answList.size
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bind(SubjectList[position], isTeacher)
+        holder.bind(answList[position])
     }
 }
