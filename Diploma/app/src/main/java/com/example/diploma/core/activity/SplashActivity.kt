@@ -10,6 +10,8 @@ import android.widget.ImageView
 import android.widget.ProgressBar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
+import com.example.diploma.core.classes.AccountManager
+import java.io.File
 
 
 class SplashActivity : AppCompatActivity() {
@@ -18,7 +20,7 @@ class SplashActivity : AppCompatActivity() {
     private lateinit var animation: Animation
     private lateinit var progressBar: ProgressBar
     private lateinit var layout: ConstraintLayout
-    private val SPLASH_DURATION: Long = 2500
+    private val SPLASH_DURATION: Long = 1000
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,6 +28,7 @@ class SplashActivity : AppCompatActivity() {
         progressBar = findViewById(com.example.diploma.R.id.progressBar)
         layout = findViewById(com.example.diploma.R.id.splashLayout)
         imageView = findViewById(com.example.diploma.R.id.imageView)
+        AccountManager.context = applicationContext
         animation = AnimationUtils.loadAnimation(baseContext, com.example.diploma.R.anim.rotate)
 
     }
@@ -56,7 +59,12 @@ class SplashActivity : AppCompatActivity() {
     }
 
     fun nextActivity(activity: Activity) {
-        val intent = Intent(activity, MainActivity::class.java)
-        activity.startActivity(intent)
+        val mainActivity = Intent(activity, MainActivity::class.java)
+        val loginActivity = Intent(activity, LoginActivity::class.java)
+        val User = File(applicationContext.filesDir, "User.dat")
+        if(User.exists())
+            activity.startActivity(mainActivity)
+        else
+            activity.startActivity(loginActivity)
     }
 }

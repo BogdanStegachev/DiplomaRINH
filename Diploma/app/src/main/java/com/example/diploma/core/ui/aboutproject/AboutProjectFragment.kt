@@ -13,20 +13,15 @@ import com.example.diploma.R
 
 class AboutProjectFragment : Fragment() {
 
-    private lateinit var aboutProjectViewModel: AboutProjectViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        aboutProjectViewModel =
-            ViewModelProviders.of(this).get(AboutProjectViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_about, container, false)
-        val textView: TextView = root.findViewById(R.id.text_tools)
-        aboutProjectViewModel.text.observe(this, Observer {
-            textView.text = it
-        })
+
+
         return root
     }
 }
