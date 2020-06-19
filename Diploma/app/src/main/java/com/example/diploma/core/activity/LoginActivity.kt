@@ -76,7 +76,7 @@ class LoginActivity : AppCompatActivity() {
                         if(profileResponse.group == null)
                         {
                             isTeacher = true
-                            profileResponse.group = Group(-1, "")
+                            profileResponse.group = Group(0, "")
                         }
                         profileResponse.isTeacher = isTeacher
                         fos.write(profileResponse.toJson().toByteArray())
@@ -107,8 +107,4 @@ class LoginActivity : AppCompatActivity() {
         })
     }
 
-    fun nextActivity(activity: Activity) {
-        val mainActivity = Intent(activity, MainActivity::class.java)
-        activity.startActivity(mainActivity)
-    }
 }

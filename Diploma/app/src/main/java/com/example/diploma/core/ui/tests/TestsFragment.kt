@@ -156,12 +156,15 @@ class TestsFragment : Fragment() {
                     ) {
                         if(response.code() != 200)
                         {
-                            Toast.makeText(
-                                requireContext(),
-                                "Ошибка! ${response.code()} ${response.message()}",
-                                Toast.LENGTH_SHORT
-                            ).show()
-
+//                            Toast.makeText(
+//                                requireContext(),
+//                                "Ошибка! ${response.code()} ${response.message()}",
+//                                Toast.LENGTH_SHORT
+//                            ).show()
+                            adapter.clearTests()
+                            adapter.setTests(respTests)
+                            tests = ArrayList()
+                            tests!!.addAll(respTests)
                             return
                         }
                         adapter.clearTests()
@@ -192,7 +195,7 @@ class TestsFragment : Fragment() {
             }
             "Удалить" -> {
                 val dialog = androidx.appcompat.app.AlertDialog.Builder(requireContext())
-                    .setTitle("Вы уверены, что хотите удалить задание?")
+                    .setTitle("Вы уверены, что хотите удалить тест?")
                     .setPositiveButton(
                         android.R.string.yes
                     ) { _, _ ->

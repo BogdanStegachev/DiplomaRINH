@@ -60,7 +60,7 @@ class CreateTestsFragment : Fragment() {
         val bundle = arguments
         if (bundle != null) {
             test = Json.parse(Test.serializer(), bundle.getString("test")!!)
-
+            addTestBut.text = "Изменить тест"
             testName.setText(test!!.name)
             testTheme.setText(test!!.theme)
             adapter.setItems(test!!.questions)
@@ -97,10 +97,6 @@ class CreateTestsFragment : Fragment() {
             adapter.questions
         )
 
-//        val call = api.updateTest(
-//            "Bearer " + AccountManager.Token,
-//            test!!
-//        )
         val call = api.updateTest("Bearer " + AccountManager.Token, test!!, test!!.testId.toLong())
 
         call.enqueue(object : Callback<Void> {

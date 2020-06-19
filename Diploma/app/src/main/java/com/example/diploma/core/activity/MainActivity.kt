@@ -79,7 +79,7 @@ class MainActivity : AppCompatActivity() {
         val username = navView.getHeaderView(0).findViewById<TextView>(R.id.username)
         username.text =AccountManager.User!!.name
         val avatar = navView.getHeaderView(0).findViewById<ImageView>(R.id.avatar)
-        Picasso.get().load(AccountManager.User!!.avatar).into(avatar)
+        Picasso.get().load("https://api.rsue.online/avatars/" + AccountManager.User!!.avatar).into(avatar)
     }
 
     private fun logout()

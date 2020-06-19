@@ -82,6 +82,11 @@ class ResultsFragment : Fragment() {
             ) {
                 if(response.code() != 200)
                 {
+                    if (response.code() == 404)
+                    {
+                        Toast.makeText(requireContext(),"Результаты не найдены" , Toast.LENGTH_LONG).show()
+                        return
+                    }
                     Toast.makeText(requireContext(),"Ошибка! ${response.code()} ${response.message()}", Toast.LENGTH_LONG).show()
                     return
                 }

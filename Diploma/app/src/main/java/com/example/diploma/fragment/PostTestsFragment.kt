@@ -66,7 +66,6 @@ class PostTestsFragment : Fragment() {
                 RecyclerItemClickListener.OnItemClickListener {
 
                 override fun onItemClicked(position: Int, view: View) {
-                    val i = 0
                 }
 
                 override fun onItemClick(view: View?, position: Int) {
