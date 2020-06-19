@@ -332,6 +332,7 @@ class TestsFragment : Fragment() {
                             call: Call<ArrayList<Test>>,
                             response: Response<ArrayList<Test>>
                         ) {
+                            adapter.clearTests()
                             if (response.code() != 200) {
                                 if (response.code() != 404)
                                     Toast.makeText(

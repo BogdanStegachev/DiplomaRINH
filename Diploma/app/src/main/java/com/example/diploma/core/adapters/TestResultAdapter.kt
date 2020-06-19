@@ -19,7 +19,7 @@ class TestResultAdapter : RecyclerView.Adapter<TestResultAdapter.ViewHolder>() {
 
         fun bind(res: ResultResponse) {
             testNum.text = res.test.name + res.test.theme + ". " + "Оценка: " + res.mark
-            errorsCount.text = "Правильность теста: " + res.percent + " процента"
+            errorsCount.text = "Процент правильных ответов: " + res.percent
         }
     }
 

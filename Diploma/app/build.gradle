@@ -53,6 +53,7 @@ dependencies {
     implementation "org.jetbrains.kotlinx:kotlinx-serialization-runtime:0.14.0"
     implementation 'com.shawnlin:number-picker:2.4.10'
 
+    androidTestImplementation 'com.android.support.test.espresso:espresso-contrib:2.2.2'
     androidTestImplementation 'androidx.test:rules:1.2.0'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'
