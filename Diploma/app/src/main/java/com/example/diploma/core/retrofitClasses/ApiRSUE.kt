@@ -41,5 +41,8 @@ interface ApiRSUE {
 
     @GET("tests/completed")
     fun getCompleted(@Header("Authorization") Authorization: String):Call<ArrayList<Int>>
+
+    @GET("results")
+    fun getResult(@Header("Authorization") Authorization: String, @Query("groupId") gId:Int):Call<ArrayList<ResultsTeacher>>
 }
 

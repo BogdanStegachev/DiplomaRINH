@@ -13,7 +13,7 @@ class RetrofitInstance {
             get() {
                 if (retrofit == null) {
                     retrofit = retrofit2.Retrofit.Builder()
-                        .baseUrl("http://api.rsue.online/")
+                        .baseUrl("https://api.rsue.online/")
                         .addConverterFactory(GsonConverterFactory.create())
                         .build()
                 }

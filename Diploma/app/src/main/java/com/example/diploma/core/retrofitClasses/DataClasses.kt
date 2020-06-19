@@ -57,6 +57,10 @@ data class Group(
     val name: String
 )
 
+data class ResultsTeacher(
+    val name: String,
+    val results: ArrayList<ResultResponse>
+)
 
 data class ResultRequest(
     val testId:Int,
